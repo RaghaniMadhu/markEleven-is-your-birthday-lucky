@@ -4,14 +4,53 @@ checkButton = document.querySelector("#check");
 output = document.querySelector("#output");
 
 checkButton.addEventListener("click", function checkBirthdayLuck(){
-    var sum = findBirthdaySum(birthDateInput.value);
-    if((sum%Number(luckyNumberInput.value)) === 0){
-        output.innerText = "Yayyy!! Your birthday is lucky.";
+    if(validateInput(birthDateInput.value, luckyNumberInput.value)){
+        var sum = findBirthdaySum(birthDateInput.value);
+        if((sum%Number(luckyNumberInput.value)) === 0){
+            showMessageOutput("Yayyy!! Your birthday is lucky.");
+        }
+        else{
+            showMessageOutput("Nahhh!! Your birthday is not lucky.");
+        }
     }
-    else{
-        output.innerText = "Nahhh!! Your birthday is not lucky.";
-    }
+    
 });
+
+function validateInput(birthDate, luckyNumber){
+    if(birthDate.length === 0){
+        showMessageOutput("Please enter a birthate");
+        return false;
+    }
+    if(luckyNumber < 1){
+        showMessageOutput("Please enter a valid lucky number.");
+        return false;
+    }else if(luckyNumber === "1"){
+        showMessageOutput("1 is lucky number for any given birthdate. Please enter valid input");
+        return false;
+    }else{
+        // checking to not allow future date
+        var dateToday = new Date();
+
+        var month = dateToday.getMonth() + 1;
+        var day = dateToday.getDate();
+        var year = dateToday.getFullYear();
+
+        if(month < 10)
+            month = '0' + month.toString();
+        if(day < 10)
+            day = '0' + day.toString();
+        var maxDate = year + '-' + month + '-' + day;
+
+        birthDateObject = new Date(birthDate);
+        todaysDateObject = new Date(maxDate);
+
+        if(birthDateObject > todaysDateObject){
+            showMessageOutput("You are yet to be born");
+            return false;
+        }
+    }
+    return true;
+}
 
 function findBirthdaySum(birthDateInput){
     var sum = 0;
@@ -26,3 +65,8 @@ function findBirthdaySum(birthDateInput){
     }
     return sum;
 }
+
+function showMessageOutput(message){
+    output.innerText = message;   
+}
+
