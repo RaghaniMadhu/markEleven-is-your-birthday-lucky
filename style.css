@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+
+
+:root{
+    --primary-color:#813772;
+    --secondary-color: #f5d0fe;
+    --white-color: #fff;
+    --black-color: #000;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0px auto;
+    background-color: var(--secondary-color);
+}
+
+
+.header{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 0.5rem 2rem;
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+
+main{
+    text-align: center;
+    width: 20vw;
+}
+
+.container{
+    padding: 2rem;
+    margin: auto;
+}
+
+input{
+    display: block;
+    margin: auto;
+    margin-bottom: 1rem;
+    width: 70%;
+    text-align: center;
+    border-radius: 0.3rem;
+    font-family: 'Quicksand', sans-serif;   
+    color: var(--primary-color);
+    font-weight: bolder;
+    padding: 0.2rem;
+    border: 2px solid var(--primary-color);
+    background-color: var(--secondary-color);
+}
+
+label{
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+button {
+    display: block;
+    margin: auto;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 0.5rem 1rem;
+    font-size: large;
+    font-family: 'Quicksand', sans-serif;  
+    border-color: var(--secondary-color);
+    border-radius: 0.5rem;  
+}
+
+#output {
+    display: block;
+    font-size: large;
+    color: var(--primary-color);
+    font-weight: bold;
+    margin: 1rem, auto;
+}
