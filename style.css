@@ -58,6 +58,7 @@ button {
     color: var(--white-color);
     padding: 0.5rem 1rem;
     font-size: large;
+    font-weight: bold;
     font-family: 'Quicksand', sans-serif;  
     border-color: var(--secondary-color);
     border-radius: 0.5rem;  
