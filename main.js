@@ -17,8 +17,8 @@ checkButton.addEventListener("click", function checkBirthdayLuck(){
 });
 
 function validateInput(birthDate, luckyNumber){
-    if(birthDate.length === 0){
-        showMessageOutput("Please enter a birthate");
+    if(birthDate.length == 0 || luckyNumber.length == 0){
+        showMessageOutput("Please enter Birth Date and Lucky Number");
         return false;
     }
     if(luckyNumber < 1){
